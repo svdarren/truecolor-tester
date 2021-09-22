@@ -1,5 +1,4 @@
 from sys import argv
-from truecolor import
 def main(col_arg="80"):
     try:
         cols =int(col_arg)
@@ -13,13 +12,21 @@ def main(col_arg="80"):
         } for col in range(cols)
     ]
 
-    for c in colors:
+    for count, c in enumerate(colors):
         r,g,b = c.values()
-        print("\033[48;2;{};{};{}".format(
+        foreground = "\033[48;2;{};{};{}m".format(
             round(r),
             round(g),
             round(b),
-        ))
+        )
+        background = "\033[38;2;{};{};{}m".format(
+            round(255-r),
+            round(255-g),
+            round(255-b),
+        )
+        print(foreground, background, str(count))
+
+    return True
 
         
 
