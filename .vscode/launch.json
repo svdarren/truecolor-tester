@@ -9,7 +9,15 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "internalConsole"
+        },
+        {
+            "name": "Python: Test debug config",
+            "type": "python",
+            "request": "test",
+            "console": "integratedTerminal",
+            "logToFile": true
         }
+
     ]
 }

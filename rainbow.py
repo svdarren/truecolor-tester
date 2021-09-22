@@ -25,10 +25,17 @@ def main(col_arg="80"):
             round(255-b),
         )
         print(foreground, background, str(count))
+        print("\033[0m")
 
     return True
 
-        
+def ansi_color_test():
+    print("\033[45m ANSI 8 \033[0m")
+    print("\033[45;1m ANSI 8 Bright \033[0m")
+    print("\033[48;5;100m ANSI 256 \033[0m")
+    print("\033[48;2;50;100;200m ANSI True Color \033[0m")
+    return True
 
 if __name__ == "__main__":
-    main(*argv[1:])
+    #main(*argv[1:])
+    ansi_color_test()
